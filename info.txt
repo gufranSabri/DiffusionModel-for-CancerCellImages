@@ -1,0 +1,3 @@
+python src_clf/clf.py -n test -m ResNet101
+
+python src_clf/clf.py -n vgg16 -m VGG16 && python src_clf/clf.py -n inceptionv3 -m InceptionV3 && python src_clf/clf.py -n densenet121 -m DenseNet121 && python src_clf/clf.py -n mnetv2 -m MobileNetV2
