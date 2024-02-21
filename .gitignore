@@ -1,2 +1,3 @@
 output/*/weights/*
 data/*
+src_dm/results/*
