@@ -63,7 +63,7 @@ def train(args):
     device = args.device
     dataloader = get_data(args)
     model = UNet().to(device)
-    model.load_state_dict(torch.load("/Users/gufran/Developer/Projects/AI/CancerCellDataAugmentation/models/DDPM_Uncondtional/ckpt.pt"))
+    # model.load_state_dict(torch.load("/Users/gufran/Developer/Projects/AI/CancerDM/models/DDPM_Uncondtional/ckpt.pt"))
     optimizer = optim.AdamW(model.parameters(), lr=args.lr)
     mse = nn.MSELoss()
     diffusion = Diffusion(img_size=args.image_size, device=device)
@@ -100,7 +100,7 @@ def launch():
     args.epochs = 500
     args.batch_size = 12
     args.image_size = 64
-    args.dataset_path = r"/Users/gufran/Developer/Projects/AI/CancerCellDataAugmentation/data/fold_3"
+    args.dataset_path = r"/Users/gufran/Developer/Projects/AI/CancerDM/data/original/train"
     args.device = "mps"
     args.lr = 3e-4
     train(args)
